@@ -1,0 +1,1434 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Séance 13 - Créer son lead magnet LinkedIn</title>
+  <meta name="description" content="Support de formation : créer un lead magnet LinkedIn, produire le dossier, publier, répondre et convertir.">
+  <style>
+:root{
+  --linkedin:#0A66C2;
+  --linkedin-dark:#004182;
+  --linkedin-light:#E8F3FF;
+  --sky:#70B5F9;
+  --ink:#111827;
+  --muted:#5f6b7a;
+  --line:#172033;
+  --paper:#ffffff;
+  --soft:#f3f7fb;
+  --green:#057642;
+  --warn:#b45309;
+  --shadow:0 22px 50px rgba(10,102,194,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--ink);
+  background:linear-gradient(180deg,#f7fbff 0%,#fff 40%,#eef6ff 100%);
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height:1.55;
+}
+a{color:inherit}
+.topbar{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;gap:16px;justify-content:space-between;
+  padding:14px clamp(16px,3vw,42px);
+  background:rgba(255,255,255,.92);
+  border-bottom:3px solid var(--line);
+  backdrop-filter:blur(12px);
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900}
+.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:7px;background:var(--linkedin);color:#fff;font-weight:900;font-size:26px}
+.topbar nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.topbar nav a{padding:8px 12px;border:2px solid var(--line);border-radius:999px;background:#fff;text-decoration:none;font-size:14px;font-weight:800;box-shadow:3px 3px 0 var(--sky)}
+.progress{position:fixed;top:0;left:0;height:5px;background:var(--linkedin);z-index:40;width:0}
+.deck{max-width:1220px;margin:0 auto;padding:30px clamp(14px,3vw,34px) 80px}
+.slide{
+  position:relative;
+  min-height:72vh;
+  margin:36px 0;
+  padding:clamp(28px,5vw,70px);
+  border:3px solid var(--line);
+  border-radius:24px;
+  background:var(--paper);
+  box-shadow:9px 9px 0 var(--linkedin);
+  overflow:hidden;
+}
+.slide::before{
+  content:"";
+  position:absolute;inset:0 auto auto 0;width:100%;height:9px;background:linear-gradient(90deg,var(--linkedin),var(--sky),#fff);
+}
+.section-number{
+  position:absolute;right:22px;top:20px;
+  color:var(--linkedin-dark);
+  font-weight:900;font-size:14px;
+  border:2px solid var(--line);border-radius:999px;padding:5px 10px;background:#fff;
+}
+.content{position:relative;z-index:1}
+.kicker{margin:0 0 10px;text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:950;color:var(--linkedin-dark)}
+h1,h2,h3{line-height:1.04;letter-spacing:0;margin:0}
+h2{font-size:clamp(34px,6vw,76px);max-width:980px}
+.lead{font-size:clamp(18px,2.2vw,26px);max-width:900px;color:#1f2937;margin:24px 0}
+.hero{background:linear-gradient(135deg,var(--linkedin) 0%,#0b7bd7 48%,#fff 48.2%,#fff 100%);color:#fff}
+.hero h2,.hero .lead,.hero .kicker{color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.12)}
+.hero .stats div,.hero .media{background:#fff;color:var(--ink)}
+.split .content{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.85fr);gap:34px;align-items:center}
+.split.reverse .content{grid-template-columns:minmax(320px,.85fr) minmax(0,1fr)}
+.split.reverse .lead,.split.reverse h2,.split.reverse .kicker{grid-column:2}
+.split.reverse .media,.split.reverse .checklist,.split.reverse .steps,.split.reverse .prompt-block{grid-column:1;grid-row:1 / span 4}
+.full-image .media img{max-height:none}
+.cards .cards-grid,.cards-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:26px
+}
+.cards-grid>div{
+  border:2px solid var(--line);border-radius:18px;padding:20px;background:var(--linkedin-light);box-shadow:5px 5px 0 var(--line)
+}
+.cards-grid h3{font-size:22px;margin-bottom:10px;color:var(--linkedin-dark)}
+.cards-grid p{margin:0;color:#263548}
+.toc-grid,.link-grid,.day-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px
+}
+.toc-grid a,.link-card,.day-grid>div{
+  display:block;text-decoration:none;border:2px solid var(--line);border-radius:16px;background:#fff;padding:18px;font-weight:900;box-shadow:5px 5px 0 var(--sky)
+}
+.link-card span{display:block;color:var(--linkedin);font-size:22px;margin-bottom:8px}
+.link-card strong{font-size:14px;color:var(--muted)}
+.media{
+  margin:28px 0 0;border:3px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:8px 8px 0 var(--linkedin-light)
+}
+.media img{display:block;width:100%;height:auto;max-height:610px;object-fit:contain;background:#fff}
+.media figcaption{padding:12px 14px;border-top:2px solid var(--line);font-size:14px;color:var(--muted);font-weight:800}
+.checklist,.steps{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:12px;max-width:850px}
+.checklist li,.steps li{
+  border:2px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;box-shadow:4px 4px 0 var(--linkedin-light);font-weight:760
+}
+.checklist li::before{content:"✓";color:#fff;background:var(--linkedin);border-radius:50%;padding:1px 6px;margin-right:10px;font-weight:950}
+.steps{counter-reset:step}
+.steps li{counter-increment:step}
+.steps li::before{content:counter(step);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--linkedin);color:#fff;margin-right:10px;font-weight:950}
+.prompt-block{margin:24px 0;border:3px solid var(--line);border-radius:18px;background:#071827;color:#dbeafe;overflow:hidden;box-shadow:8px 8px 0 var(--sky)}
+.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;background:#0f2f56;border-bottom:2px solid var(--line);font-weight:900;color:#fff}
+.copy-btn{appearance:none;border:2px solid #fff;border-radius:999px;background:var(--linkedin);color:#fff;font-weight:900;padding:8px 14px;cursor:pointer}
+.copy-btn.copied{background:var(--green)}
+pre{white-space:pre-wrap;margin:0;padding:18px;font:15px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.table-wrap{overflow:auto;margin:24px 0;border:3px solid var(--line);border-radius:18px;box-shadow:7px 7px 0 var(--linkedin-light)}
+table{border-collapse:collapse;width:100%;min-width:650px;background:#fff}
+th,td{border:2px solid var(--line);padding:14px;text-align:left;vertical-align:top}
+th{background:var(--linkedin);color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:.06em}
+td{font-weight:720;color:#1f2937}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}
+.before-after>div{border:3px solid var(--line);border-radius:18px;padding:22px;background:#fff;box-shadow:6px 6px 0 var(--linkedin-light)}
+.before-after span{display:inline-block;margin-bottom:10px;padding:5px 10px;border-radius:999px;background:var(--linkedin);color:#fff;font-weight:900}
+.before-after p{margin:0;font-size:20px;font-weight:800}
+blockquote{margin:26px 0;padding:26px 30px;border-left:12px solid var(--linkedin);background:var(--linkedin-light);border-radius:18px;font-size:clamp(22px,3vw,36px);font-weight:900;line-height:1.18}
+.callout{margin:24px 0;padding:18px 20px;border:3px solid var(--line);border-radius:16px;background:var(--linkedin-light);box-shadow:6px 6px 0 var(--sky)}
+.callout.warn{background:#fff7ed;box-shadow:6px 6px 0 #fed7aa}
+.callout strong{font-size:22px;color:var(--linkedin-dark)}
+.callout.warn strong{color:var(--warn)}
+.callout p{margin:8px 0 0;font-size:18px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}
+.stats div{border:3px solid var(--line);border-radius:18px;background:var(--linkedin-light);padding:20px;text-align:center;box-shadow:5px 5px 0 var(--line)}
+.stats strong{display:block;font-size:clamp(32px,5vw,56px);line-height:1;color:var(--linkedin)}
+.stats span{font-weight:900;color:#1f2937}
+.timeline{display:flex;gap:10px;align-items:stretch;margin:28px 0;overflow:auto;padding-bottom:8px}
+.timeline div{min-width:150px;border:3px solid var(--line);border-radius:16px;background:#fff;padding:16px;box-shadow:4px 4px 0 var(--sky)}
+.timeline b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--linkedin);color:#fff;margin-bottom:12px}
+.timeline span{font-weight:900}
+.day-grid{grid-template-columns:repeat(7,minmax(130px,1fr));overflow:auto}
+.day-grid b{color:var(--linkedin);font-size:20px}
+.day-grid p{margin:8px 0 0}
+.quote{background:var(--linkedin-light)}
+.prompt{background:#f8fbff}
+.table{background:linear-gradient(180deg,#fff 0%,var(--linkedin-light) 100%)}
+.diagnostic{background:#fff}
+.checklist{background:#fff}
+.footer{
+  text-align:center;padding:42px 20px 70px;color:var(--muted);font-weight:800
+}
+@media (max-width:920px){
+  .topbar{align-items:flex-start;flex-direction:column}
+  .topbar nav{justify-content:flex-start}
+  .deck{padding-inline:12px}
+  .slide{margin:22px 0;border-radius:18px;padding:26px 18px;min-height:auto;box-shadow:5px 5px 0 var(--linkedin)}
+  .split .content,.split.reverse .content{display:block}
+  .split.reverse .lead,.split.reverse h2,.split.reverse .kicker,.split.reverse .media,.split.reverse .checklist,.split.reverse .steps,.split.reverse .prompt-block{grid-column:auto;grid-row:auto}
+  .cards .cards-grid,.cards-grid,.toc-grid,.link-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .before-after{grid-template-columns:1fr}
+  h2{font-size:clamp(30px,11vw,48px)}
+  .lead{font-size:18px}
+  .section-number{position:static;display:inline-block;margin-bottom:18px}
+  pre{font-size:13px}
+}
+html,body{max-width:100%;overflow-x:hidden}
+img,video,canvas,svg{max-width:100%}
+.content,.table-wrap,.prompt-block,.media,.cards-grid,.toc-grid,.link-grid,.day-grid,.timeline{min-width:0;max-width:100%}
+@media (max-width:920px){
+  .split .content,.split.reverse .content{min-width:0}
+  .day-grid{display:grid;grid-template-columns:1fr;overflow:visible}
+  .timeline{display:grid;grid-template-columns:1fr;overflow:visible}
+  .timeline div{min-width:0}
+  .table-wrap{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{width:100%;min-width:560px}
+  .slide{max-width:100%;overflow:hidden}
+  .media{box-shadow:4px 4px 0 var(--linkedin-light)}
+}
+@media (max-width:520px){
+  table{min-width:520px}
+  .prompt-head{align-items:flex-start;flex-direction:column}
+  .copy-btn{width:100%}
+  .topbar nav a{font-size:13px;padding:7px 9px}
+}
+</style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">in</span><span>Formation IA - Séance 13</span></div>
+    <nav aria-label="Navigation rapide">
+      <a href="#section-001">Intro</a>
+      <a href="#section-016">Idées</a>
+      <a href="#section-031">Dossier</a>
+      <a href="#section-055">Publication</a>
+      <a href="#section-090">Checklist</a>
+    </nav>
+  </header>
+  <main class="deck">
+    
+    <section id="section-001" class="slide hero">
+      <div class="section-number">001</div>
+      <div class="content">
+        <p class="kicker">Séance 13</p>
+        <h2>Créer un lead magnet LinkedIn qui attire des prospects</h2>
+        <p class="lead">Je construis une ressource utile, je la publie sur LinkedIn, je demande un commentaire simple, puis j’envoie le dossier en message privé. Le but n’est pas de faire joli. Le but est de créer un système qui ramène des abonnés, du trafic, des conversations et des rendez-vous.</p>
+        <div class="stats"><div><strong>100</strong><span>sections</span></div><div><strong>27</strong><span>images dans le support</span></div><div><strong>LinkedIn</strong><span>couleur</span></div></div><figure class="media"><img src="img/session-13/frame-001.jpg" alt="Le post Data.gouv sert de preuve : un bon lead magnet peut créer énormément de commentaires." loading="lazy"><figcaption>Le post Data.gouv sert de preuve : un bon lead magnet peut créer énormément de commentaires.</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-002" class="slide toc">
+      <div class="section-number">002</div>
+      <div class="content">
+        <p class="kicker">Plan</p>
+        <h2>La logique complète de la séance</h2>
+        <p class="lead">Je pars d’un principe simple : une bonne ressource doit être utile avant d’être commerciale. Je cherche une idée, je vérifie qu’elle intéresse vraiment les gens, je crée le livrable, je prépare le post, puis je gère les commentaires et les messages.</p>
+        <div class="toc-grid"><a href="#section-001">01. Pourquoi le lead magnet</a><a href="#section-016">16. Trouver le bon sujet</a><a href="#section-031">31. Créer le dossier</a><a href="#section-055">55. Publier sur LinkedIn</a><a href="#section-071">71. Industrialiser</a><a href="#section-090">90. Checklist finale</a></div>
+      </div>
+    </section>
+    
+    <section id="section-003" class="slide split">
+      <div class="section-number">003</div>
+      <div class="content">
+        <p class="kicker">Définition</p>
+        <h2>Un lead magnet n’est pas un PDF décoratif</h2>
+        <p class="lead">Un lead magnet, c’est une promesse courte, une ressource concrète et une action claire. Si quelqu’un commente, il doit recevoir quelque chose qu’il peut utiliser tout de suite. Sinon, la confiance descend et le post devient juste une accroche vide.</p>
+        <ul class="checklist"><li>Un sujet qui parle à beaucoup de personnes.</li><li>Un livrable facile à comprendre.</li><li>Une preuve que je l’ai vraiment construit.</li><li>Un CTA simple : commente un mot précis.</li><li>Un message privé court pour envoyer la ressource.</li></ul><figure class="media"><img src="img/session-13/frame-004.jpg" alt="Les commentaires sont le signal visible : si la ressource intéresse, les gens réagissent." loading="lazy"><figcaption>Les commentaires sont le signal visible : si la ressource intéresse, les gens réagissent.</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-004" class="slide cards">
+      <div class="section-number">004</div>
+      <div class="content">
+        <p class="kicker">Objectif</p>
+        <h2>Ce que je cherche à obtenir</h2>
+        <p class="lead">Je ne publie pas seulement pour faire des likes. Je veux créer une boucle commerciale complète : visibilité, commentaires, connexions, trafic, SEO, GEO et appels qualifiés.</p>
+        <div class="cards-grid"><div><h3>Visibilité</h3><p>Plus le post reçoit d’interactions, plus LinkedIn le pousse.</p></div><div><h3>Confiance</h3><p>La ressource prouve que je sais faire, pas seulement parler.</p></div><div><h3>Prospects</h3><p>Les personnes qui commentent lèvent déjà la main.</p></div><div><h3>Trafic</h3><p>Le lien vers mon site ou ma ressource peut améliorer mon positionnement.</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-005" class="slide full-image">
+      <div class="section-number">005</div>
+      <div class="content">
+        <p class="kicker">Post de référence</p>
+        <h2>Les posts LinkedIn à relier dans le support</h2>
+        <p class="lead">Je garde les liens cliquables vers les posts importants. L’élève peut ouvrir les exemples réels, regarder le hook, les commentaires, l’image, puis comparer avec sa propre publication.</p>
+        <div class="link-grid"><a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_urgent-meta-a-officiellement-connect%C3%A9-share-7456989996227387392-f8si/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Meta Ads + Claude</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_la-france-est-en-avance-sur-le-monde-l-share-7433879917525733376-l4xJ/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Data.gouv</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_un-assistant-seo-gratuit-pour-toutes-les-share-7422280891227348992-WGK4/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Assistant SEO</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_derni%C3%A8re-heure-claude-vient-de-sortir-des-share-7414731714822049792-xU31/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Claude Skills GEO</span><strong>Ouvrir le post LinkedIn</strong></a></div><figure class="media"><img src="img/session-13/frame-005.jpg" alt="Exemple d’un post lead magnet : ressource gratuite, preuve visuelle, commentaires, impressions." loading="lazy"><figcaption>Exemple d’un post lead magnet : ressource gratuite, preuve visuelle, commentaires, impressions.</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-006" class="slide diagnostic">
+      <div class="section-number">006</div>
+      <div class="content">
+        <p class="kicker">Diagnostic</p>
+        <h2>Si ton post ne donne pas envie de commenter, le problème vient souvent du livrable</h2>
+        <p class="lead">Le hook compte, mais il ne sauve pas une ressource faible. Je veux que la personne se dise : « si je commente, je gagne du temps ». C’est cette sensation qui déclenche l’action.</p>
+        <div class="before-after"><div><span>Avant</span><p>Je donne mon avis sur un outil IA.</p></div><div><span>Après</span><p>Je donne un système prêt à utiliser pour récupérer des leads, auditer des campagnes ou créer une page.</p></div></div><div class="callout warn"><strong>Signal faible</strong><p>Si le post ressemble à une opinion, il attire moins de commentaires qu’une ressource actionnable.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-007" class="slide split reverse">
+      <div class="section-number">007</div>
+      <div class="content">
+        <p class="kicker">Structure</p>
+        <h2>La mécanique LinkedIn que j’utilise</h2>
+        <p class="lead">Je publie une ressource, je demande de commenter un mot, puis j’envoie le lien en privé. C’est simple, mais ça crée trois effets : plus d’engagement, plus de connexions, plus de conversations.</p>
+        <ol class="steps"><li>Publier un hook clair.</li><li>Expliquer ce que contient la ressource.</li><li>Demander un commentaire simple.</li><li>Répondre ou envoyer en DM.</li><li>Relancer proprement si la personne n’a pas ouvert.</li></ol><figure class="media"><img src="img/session-13/frame-002.jpg" alt="Je réponds aux commentaires et je prépare le passage en message privé." loading="lazy"><figcaption>Je réponds aux commentaires et je prépare le passage en message privé.</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-008" class="slide quote">
+      <div class="section-number">008</div>
+      <div class="content">
+        <p class="kicker">Principe</p>
+        <h2>Je ne vends pas dans le premier message</h2>
+        <p class="lead">Le premier message sert à donner la ressource. La vente arrive seulement si la discussion s’ouvre naturellement. Cette posture change tout : la personne ne se sent pas piégée.</p>
+        <blockquote>La ressource doit être tellement claire que la personne comprend déjà mon niveau avant même de réserver un appel.</blockquote><figure class="media"><img src="img/session-13/frame-003.jpg" alt="Le message privé est court : je donne le guide et je garde la relation simple." loading="lazy"><figcaption>Le message privé est court : je donne le guide et je garde la relation simple.</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-009" class="slide table">
+      <div class="section-number">009</div>
+      <div class="content">
+        <p class="kicker">Choix du sujet</p>
+        <h2>Les familles de lead magnets qui fonctionnent bien</h2>
+        <p class="lead">Je ne me limite pas à ma niche au départ. Si mon compte n’a pas encore beaucoup d’abonnés, je peux publier des ressources IA utiles à beaucoup de dirigeants et indépendants.</p>
+        <div class="table-wrap"><table><thead><tr><th>Famille</th><th>Pourquoi ça marche</th><th>Exemple</th></tr></thead><tbody><tr><td>Leads</td><td>Tout le monde veut trouver des prospects</td><td>Google Maps + n8n : 10 000 leads</td></tr><tr><td>SEO</td><td>Toute entreprise veut être trouvée</td><td>Assistant SEO gratuit</td></tr><tr><td>GEO</td><td>Sujet nouveau, curiosité forte</td><td>Claude Skills pour le GEO</td></tr><tr><td>Data</td><td>Données publiques mal exploitées</td><td>Data.gouv + Claude</td></tr><tr><td>Ads</td><td>Budget concret, douleur immédiate</td><td>Meta Ads connecté à Claude</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-010" class="slide split">
+      <div class="section-number">010</div>
+      <div class="content">
+        <p class="kicker">Hook</p>
+        <h2>La première ligne doit créer le réflexe « je veux ça »</h2>
+        <p class="lead">Je passe du temps sur le hook. C’est la première phrase que LinkedIn affiche avant le bouton « plus ». Elle doit être compréhensible sans contexte.</p>
+        <ul class="checklist"><li>Un bénéfice visible.</li><li>Un outil connu ou une nouveauté forte.</li><li>Une promesse concrète.</li><li>Pas de mot trop technique.</li><li>Pas de phrase molle.</li></ul><figure class="media"><img src="img/session-13/frame-007.jpg" alt="Exemple : Google Maps + n8n, la promesse est immédiate." loading="lazy"><figcaption>Exemple : Google Maps + n8n, la promesse est immédiate.</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-011" class="slide split">
+      <div class="section-number">011</div>
+      <div class="content">
+        <p class="kicker">Étape 11</p>
+        <h2>Preuve sociale</h2>
+        <p class="lead">Les commentaires ne sont pas juste de l’engagement. Ils prouvent que la ressource intéresse vraiment des gens.</p>
+        <div class="stats"><div><strong>visible</strong><span>preuve</span></div><div><strong>commentaire</strong><span>action</span></div><div><strong>DM</strong><span>suite</span></div></div><figure class="media"><img src="img/session-13/frame-006.jpg" alt="Preuve sociale" loading="lazy"><figcaption>Preuve sociale</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-012" class="slide cards">
+      <div class="section-number">012</div>
+      <div class="content">
+        <p class="kicker">Étape 12</p>
+        <h2>Recyclage intelligent</h2>
+        <p class="lead">Un ancien post peut être recyclé si je change le hook, l’angle et le livrable. Je ne copie pas, je reformule.</p>
+        <div class="before-after"><div><span>Avant</span><p>Je publie une idée ou une opinion.</p></div><div><span>Après</span><p>Je publie une ressource que la personne veut recevoir.</p></div></div><figure class="media"><img src="img/session-13/frame-007.jpg" alt="Recyclage intelligent" loading="lazy"><figcaption>Recyclage intelligent</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-013" class="slide full-image">
+      <div class="section-number">013</div>
+      <div class="content">
+        <p class="kicker">Étape 13</p>
+        <h2>Pourquoi viser large au début</h2>
+        <p class="lead">Au départ, je veux chauffer mon compte et montrer une expertise IA générale. Ensuite je peux revenir vers ma niche.</p>
+        <div class="cards-grid"><div><h3>Idée</h3><p>Une promesse courte.</p></div><div><h3>Livrable</h3><p>Un dossier ou une page utile.</p></div><div><h3>Preuve</h3><p>Une capture ou un exemple réel.</p></div><div><h3>Action</h3><p>Un mot à commenter.</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-014" class="slide table">
+      <div class="section-number">014</div>
+      <div class="content">
+        <p class="kicker">Étape 14</p>
+        <h2>La limite du contenu trop niche</h2>
+        <p class="lead">Si je parle uniquement à ma micro-cible dès le départ, je risque d’avoir peu de portée. Je construis d’abord un socle.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-015" class="slide diagnostic">
+      <div class="section-number">015</div>
+      <div class="content">
+        <p class="kicker">Étape 15</p>
+        <h2>La veille sur X</h2>
+        <p class="lead">X permet souvent de repérer les nouveautés avant qu’elles deviennent populaires sur LinkedIn.</p>
+        <figure class="media"><img src="img/session-13/frame-008.jpg" alt="La veille sur X" loading="lazy"><figcaption>La veille sur X</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-016" class="slide prompt">
+      <div class="section-number">016</div>
+      <div class="content">
+        <p class="kicker">Étape 16</p>
+        <h2>Trouver une nouveauté exploitable</h2>
+        <p class="lead">Je cherche une annonce, un connecteur, une librairie, un outil ou une méthode que je peux transformer en guide.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Générer des idées de lead magnets</span><button class="copy-btn" type="button" data-copy="Tu es stratège LinkedIn B2B.
+Je veux générer des idées de lead magnets IA simples, utiles et applicables rapidement.
+
+Contexte :
+- Mon offre : [TON_OFFRE]
+- Ma cible : [TA_CIBLE]
+- Mon niveau technique : [TON_NIVEAU]
+- Mes outils : Claude, ChatGPT, Codex, n8n, Make, Apify, Data.gouv, Pappers, WordPress, Elementor.
+
+Donne-moi 30 idées classées par famille :
+SEO, GEO, ADS, SITE, LEADS, DATA_GOUV, APIFY, MAPS, PAPPERS, MARCHES, ECOM, AVIS, CRM, REDDIT, EMAIL, CONTENU.
+
+Pour chaque idée :
+1. Hook LinkedIn
+2. Ressource offerte
+3. Ce que la personne obtient
+4. Prompt ou workflow à utiliser
+5. Niveau de difficulté
+6. Pourquoi ça peut générer des commentaires
+
+Contraintes :
+- pas de jargon
+- bénéfice visible en 5 secondes
+- utilisable par une PME
+- pas de promesse magique">Copier</button></div><pre>Tu es stratège LinkedIn B2B.
+Je veux générer des idées de lead magnets IA simples, utiles et applicables rapidement.
+
+Contexte :
+- Mon offre : [TON_OFFRE]
+- Ma cible : [TA_CIBLE]
+- Mon niveau technique : [TON_NIVEAU]
+- Mes outils : Claude, ChatGPT, Codex, n8n, Make, Apify, Data.gouv, Pappers, WordPress, Elementor.
+
+Donne-moi 30 idées classées par famille :
+SEO, GEO, ADS, SITE, LEADS, DATA_GOUV, APIFY, MAPS, PAPPERS, MARCHES, ECOM, AVIS, CRM, REDDIT, EMAIL, CONTENU.
+
+Pour chaque idée :
+1. Hook LinkedIn
+2. Ressource offerte
+3. Ce que la personne obtient
+4. Prompt ou workflow à utiliser
+5. Niveau de difficulté
+6. Pourquoi ça peut générer des commentaires
+
+Contraintes :
+- pas de jargon
+- bénéfice visible en 5 secondes
+- utilisable par une PME
+- pas de promesse magique</pre></div><figure class="media"><img src="img/session-13/frame-009.jpg" alt="Trouver une nouveauté exploitable" loading="lazy"><figcaption>Trouver une nouveauté exploitable</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-017" class="slide quote">
+      <div class="section-number">017</div>
+      <div class="content">
+        <p class="kicker">Étape 17</p>
+        <h2>Séparer hype et utilité</h2>
+        <p class="lead">Une nouveauté seule ne suffit pas. Je dois vérifier qu’elle peut devenir une ressource simple à refaire.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-018" class="slide full-image">
+      <div class="section-number">018</div>
+      <div class="content">
+        <p class="kicker">Étape 18</p>
+        <h2>Analyser les posts viraux</h2>
+        <p class="lead">Je regarde le hook, la preuve visuelle, le niveau de simplicité et la promesse. Je ne copie pas le style, je comprends la mécanique.</p>
+        <figure class="media"><img src="img/session-13/frame-014.jpg" alt="Analyser les posts viraux" loading="lazy"><figcaption>Analyser les posts viraux</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-019" class="slide timeline">
+      <div class="section-number">019</div>
+      <div class="content">
+        <p class="kicker">Étape 19</p>
+        <h2>Utiliser Refero pour le design</h2>
+        <p class="lead">Je peux regarder des références de design pour comprendre les styles, sans importer d’images externes dans la présentation.</p>
+        <figure class="media"><img src="img/session-13/frame-012.jpg" alt="Utiliser Refero pour le design" loading="lazy"><figcaption>Utiliser Refero pour le design</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-020" class="slide split reverse">
+      <div class="section-number">020</div>
+      <div class="content">
+        <p class="kicker">Étape 20</p>
+        <h2>Pourquoi le design compte</h2>
+        <p class="lead">Quand la ressource arrive dans un dossier ou une page propre, la personne sent que le travail est sérieux.</p>
+        <div class="cards-grid"><div><h3>Idée</h3><p>Une promesse courte.</p></div><div><h3>Livrable</h3><p>Un dossier ou une page utile.</p></div><div><h3>Preuve</h3><p>Une capture ou un exemple réel.</p></div><div><h3>Action</h3><p>Un mot à commenter.</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-021" class="slide split">
+      <div class="section-number">021</div>
+      <div class="content">
+        <p class="kicker">Étape 21</p>
+        <h2>Passer de l’idée au test</h2>
+        <p class="lead">Je ne publie pas une idée avant de tester que le workflow fonctionne. Sinon je promets un livrable que je ne maîtrise pas.</p>
+        <ol class="steps"><li>Je formule l’idée.</li><li>Je teste que ça fonctionne.</li><li>Je crée le dossier.</li><li>Je prépare le post.</li><li>Je publie et j’envoie.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-022" class="slide cards">
+      <div class="section-number">022</div>
+      <div class="content">
+        <p class="kicker">Étape 22</p>
+        <h2>Codex comme assistant de production</h2>
+        <p class="lead">J’utilise Codex pour écrire, organiser, construire des pages et accélérer la production du livrable.</p>
+        <figure class="media"><img src="img/session-13/frame-017.jpg" alt="Codex comme assistant de production" loading="lazy"><figcaption>Codex comme assistant de production</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-023" class="slide prompt">
+      <div class="section-number">023</div>
+      <div class="content">
+        <p class="kicker">Étape 23</p>
+        <h2>Créer un article WordPress</h2>
+        <p class="lead">Le site peut héberger le livrable, améliorer le SEO et donner une preuve professionnelle.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Aller dans les articles</span><button class="copy-btn" type="button" data-copy="okay top va dans la partie article stp">Copier</button></div><pre>okay top va dans la partie article stp</pre></div><div class="prompt-block"><div class="prompt-head"><span>Créer un nouvel article</span><button class="copy-btn" type="button" data-copy="créer un nouveau article stp">Copier</button></div><pre>créer un nouveau article stp</pre></div><div class="prompt-block"><div class="prompt-head"><span>Créer l’article WordPress</span><button class="copy-btn" type="button" data-copy="créer un nouveau article stp sur ce sujet n&#x27;oublie pas on parle de quoi plz le but c&#x27;est de faire un article de 1600 mots soit naturel amical comprehensible n&#x27;en rajoute pas sur tes mots reste simple et faut des liens interne externe stp">Copier</button></div><pre>créer un nouveau article stp sur ce sujet n&#x27;oublie pas on parle de quoi plz le but c&#x27;est de faire un article de 1600 mots soit naturel amical comprehensible n&#x27;en rajoute pas sur tes mots reste simple et faut des liens interne externe stp</pre></div><figure class="media"><img src="img/session-13/frame-018.jpg" alt="Créer un article WordPress" loading="lazy"><figcaption>Créer un article WordPress</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-024" class="slide table">
+      <div class="section-number">024</div>
+      <div class="content">
+        <p class="kicker">Étape 24</p>
+        <h2>Garder le style naturel</h2>
+        <p class="lead">Je demande explicitement un article simple, amical et compréhensible. Je ne veux pas un texte trop marketing.</p>
+        <blockquote>Je veux que la personne puisse utiliser la ressource sans avoir besoin de moi pour comprendre la première étape.</blockquote>
+      </div>
+    </section>
+    
+    <section id="section-025" class="slide diagnostic">
+      <div class="section-number">025</div>
+      <div class="content">
+        <p class="kicker">Étape 25</p>
+        <h2>Créer des liens internes et externes</h2>
+        <p class="lead">Un article utile doit orienter vers d’autres ressources. Les liens aident l’élève et renforcent la structure SEO.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-026" class="slide prompt">
+      <div class="section-number">026</div>
+      <div class="content">
+        <p class="kicker">Étape 26</p>
+        <h2>Rester simple dans les mots</h2>
+        <p class="lead">Le support doit être compris par une PME, pas seulement par un expert IA.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-027" class="slide prompt">
+      <div class="section-number">027</div>
+      <div class="content">
+        <p class="kicker">Étape 27</p>
+        <h2>Créer l’image du post</h2>
+        <p class="lead">L’image sert à comprendre l’idée en une seconde : Meta Ads relié à Claude.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Créer le visuel du post</span><button class="copy-btn" type="button" data-copy="fait moi une image ou on voit meta ads connecter a claude stp tres simple fond blanc avec les bons logos">Copier</button></div><pre>fait moi une image ou on voit meta ads connecter a claude stp tres simple fond blanc avec les bons logos</pre></div><figure class="media"><img src="img/session-13/frame-027.jpg" alt="Créer l’image du post" loading="lazy"><figcaption>Créer l’image du post</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-028" class="slide full-image">
+      <div class="section-number">028</div>
+      <div class="content">
+        <p class="kicker">Étape 28</p>
+        <h2>La force d’un visuel minimal</h2>
+        <p class="lead">Fond blanc, bons logos, relation claire. Pas besoin d’une illustration compliquée.</p>
+        <figure class="media"><img src="img/session-13/frame-032.jpg" alt="La force d’un visuel minimal" loading="lazy"><figcaption>La force d’un visuel minimal</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-029" class="slide prompt">
+      <div class="section-number">029</div>
+      <div class="content">
+        <p class="kicker">Étape 29</p>
+        <h2>Rendre le post plus tranchant</h2>
+        <p class="lead">Si le hook est trop tiède, je demande une version plus directe. Le but est de créer une vraie tension.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Renforcer le hook</span><button class="copy-btn" type="button" data-copy="non soit plus tranchant bullshit pousse ta reflexion">Copier</button></div><pre>non soit plus tranchant bullshit pousse ta reflexion</pre></div><figure class="media"><img src="img/session-13/frame-030.jpg" alt="Rendre le post plus tranchant" loading="lazy"><figcaption>Rendre le post plus tranchant</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-030" class="slide prompt">
+      <div class="section-number">030</div>
+      <div class="content">
+        <p class="kicker">Étape 30</p>
+        <h2>Limiter les emojis</h2>
+        <p class="lead">Les emojis peuvent aider, mais trop d’emojis donnent un rendu amateur. Je garde le post propre.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Nettoyer le ton</span><button class="copy-btn" type="button" data-copy="MET PAS TROP D&#x27;EMOJI SRT">Copier</button></div><pre>MET PAS TROP D&#x27;EMOJI SRT</pre></div><figure class="media"><img src="img/session-13/frame-033.jpg" alt="Limiter les emojis" loading="lazy"><figcaption>Limiter les emojis</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-031" class="slide split">
+      <div class="section-number">031</div>
+      <div class="content">
+        <p class="kicker">Étape 31</p>
+        <h2>Créer un dossier Notion</h2>
+        <p class="lead">Notion permet de livrer une ressource claire, structurée et partageable rapidement.</p>
+        <figure class="media"><img src="img/session-13/frame-022.jpg" alt="Créer un dossier Notion" loading="lazy"><figcaption>Créer un dossier Notion</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-032" class="slide cards">
+      <div class="section-number">032</div>
+      <div class="content">
+        <p class="kicker">Étape 32</p>
+        <h2>Installer le connecteur Notion</h2>
+        <p class="lead">Le connecteur permet à ChatGPT de créer ou compléter des pages quand l’accès est correctement donné.</p>
+        <ol class="steps"><li>Je formule l’idée.</li><li>Je teste que ça fonctionne.</li><li>Je crée le dossier.</li><li>Je prépare le post.</li><li>Je publie et j’envoie.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-033" class="slide full-image">
+      <div class="section-number">033</div>
+      <div class="content">
+        <p class="kicker">Étape 33</p>
+        <h2>Comprendre les permissions</h2>
+        <p class="lead">Je vérifie ce que l’application peut faire avant de l’autoriser. Un connecteur doit être utile et maîtrisé.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-034" class="slide table">
+      <div class="section-number">034</div>
+      <div class="content">
+        <p class="kicker">Étape 34</p>
+        <h2>La page parent Notion</h2>
+        <p class="lead">Si la création de page bloque, je donne une page parent existante. Les connecteurs ont besoin d’un emplacement.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-035" class="slide full-image">
+      <div class="section-number">035</div>
+      <div class="content">
+        <p class="kicker">Étape 35</p>
+        <h2>Transformer une page vide</h2>
+        <p class="lead">Une page vide devient un dossier complet quand je donne la structure exacte et le contexte.</p>
+        <figure class="media"><img src="img/session-13/frame-036.jpg" alt="Transformer une page vide" loading="lazy"><figcaption>Transformer une page vide</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-036" class="slide prompt">
+      <div class="section-number">036</div>
+      <div class="content">
+        <p class="kicker">Étape 36</p>
+        <h2>La page d’accueil du dossier</h2>
+        <p class="lead">La première page explique à qui s’adresse le dossier, ce qu’il contient et comment l’utiliser.</p>
+        <div class="cards-grid"><div><h3>Idée</h3><p>Une promesse courte.</p></div><div><h3>Livrable</h3><p>Un dossier ou une page utile.</p></div><div><h3>Preuve</h3><p>Une capture ou un exemple réel.</p></div><div><h3>Action</h3><p>Un mot à commenter.</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-037" class="slide full-image">
+      <div class="section-number">037</div>
+      <div class="content">
+        <p class="kicker">Étape 37</p>
+        <h2>Sommaire cliquable</h2>
+        <p class="lead">Le sommaire permet à la personne de trouver vite le bon prompt, la bonne méthode ou la bonne checklist.</p>
+        <figure class="media"><img src="img/session-13/frame-023.jpg" alt="Sommaire cliquable" loading="lazy"><figcaption>Sommaire cliquable</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-038" class="slide checklist">
+      <div class="section-number">038</div>
+      <div class="content">
+        <p class="kicker">Étape 38</p>
+        <h2>Créer les sous-pages</h2>
+        <p class="lead">Je découpe le dossier en blocs : stratégie, connexion, prompts, KPI, garde-fous, plan d’action.</p>
+        <ol class="steps"><li>Je formule l’idée.</li><li>Je teste que ça fonctionne.</li><li>Je crée le dossier.</li><li>Je prépare le post.</li><li>Je publie et j’envoie.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-039" class="slide prompt">
+      <div class="section-number">039</div>
+      <div class="content">
+        <p class="kicker">Étape 39</p>
+        <h2>Prompt de dossier complet</h2>
+        <p class="lead">Je donne un prompt clair pour créer le dossier sans oublier les pages importantes.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Créer le dossier complet</span><button class="copy-btn" type="button" data-copy="Tu vas créer un dossier complet pour mon lead magnet.
+
+Sujet : [SUJET]
+Cible : [CIBLE]
+Objectif : [OBJECTIF]
+
+Livrables attendus :
+- un sommaire clair
+- les prompts exacts
+- une méthode étape par étape
+- une checklist
+- une matrice de décision
+- un exemple complet
+- un plan d&#x27;action 7 jours
+
+Style : simple, naturel, direct, pas corporate.">Copier</button></div><pre>Tu vas créer un dossier complet pour mon lead magnet.
+
+Sujet : [SUJET]
+Cible : [CIBLE]
+Objectif : [OBJECTIF]
+
+Livrables attendus :
+- un sommaire clair
+- les prompts exacts
+- une méthode étape par étape
+- une checklist
+- une matrice de décision
+- un exemple complet
+- un plan d&#x27;action 7 jours
+
+Style : simple, naturel, direct, pas corporate.</pre></div><div class="prompt-block"><div class="prompt-head"><span>Créer la page Notion</span><button class="copy-btn" type="button" data-copy="Crée une page Notion intitulée [NOM_DU_DOSSIER].
+Je veux un dossier complet pour aider quelqu&#x27;un à utiliser [OUTIL/SUJET].
+
+Structure :
+1. Bienvenue
+2. Ce que tu vas apprendre
+3. Prérequis
+4. Étapes de connexion
+5. Prompts exacts
+6. Méthode d&#x27;audit
+7. KPI utiles
+8. Erreurs à éviter
+9. Plan d&#x27;action 7 jours
+
+Ton : simple, direct, pédagogique, pas corporate.">Copier</button></div><pre>Crée une page Notion intitulée [NOM_DU_DOSSIER].
+Je veux un dossier complet pour aider quelqu&#x27;un à utiliser [OUTIL/SUJET].
+
+Structure :
+1. Bienvenue
+2. Ce que tu vas apprendre
+3. Prérequis
+4. Étapes de connexion
+5. Prompts exacts
+6. Méthode d&#x27;audit
+7. KPI utiles
+8. Erreurs à éviter
+9. Plan d&#x27;action 7 jours
+
+Ton : simple, direct, pédagogique, pas corporate.</pre></div>
+      </div>
+    </section>
+    
+    <section id="section-040" class="slide split reverse">
+      <div class="section-number">040</div>
+      <div class="content">
+        <p class="kicker">Étape 40</p>
+        <h2>Bienvenue utile</h2>
+        <p class="lead">Je commence par dire pourquoi le dossier existe. Pas besoin d’une introduction longue.</p>
+        <blockquote>Je veux que la personne puisse utiliser la ressource sans avoir besoin de moi pour comprendre la première étape.</blockquote>
+      </div>
+    </section>
+    
+    <section id="section-041" class="slide split">
+      <div class="section-number">041</div>
+      <div class="content">
+        <p class="kicker">Étape 41</p>
+        <h2>Prérequis</h2>
+        <p class="lead">Je liste les comptes, accès et outils nécessaires avant de lancer l’audit. Ça évite les blocages.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-042" class="slide cards">
+      <div class="section-number">042</div>
+      <div class="content">
+        <p class="kicker">Étape 42</p>
+        <h2>Connexion Meta Ads</h2>
+        <p class="lead">Le coeur du lead magnet : connecter Meta Ads à Claude pour lire les vraies données publicitaires.</p>
+        <figure class="media"><img src="img/session-13/frame-027.jpg" alt="Connexion Meta Ads" loading="lazy"><figcaption>Connexion Meta Ads</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-043" class="slide full-image">
+      <div class="section-number">043</div>
+      <div class="content">
+        <p class="kicker">Étape 43</p>
+        <h2>Audit en 20 minutes</h2>
+        <p class="lead">Je donne un chemin court : connecter, poser les questions, interpréter, décider.</p>
+        <div class="cards-grid"><div><h3>Idée</h3><p>Une promesse courte.</p></div><div><h3>Livrable</h3><p>Un dossier ou une page utile.</p></div><div><h3>Preuve</h3><p>Une capture ou un exemple réel.</p></div><div><h3>Action</h3><p>Un mot à commenter.</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-044" class="slide table">
+      <div class="section-number">044</div>
+      <div class="content">
+        <p class="kicker">Étape 44</p>
+        <h2>KPI vraiment utiles</h2>
+        <p class="lead">Je ne regarde pas tous les chiffres. Je cible ceux qui aident à décider : coût, ROAS, fatigue, conversion, budget.</p>
+        <div class="table-wrap"><table><thead><tr><th>KPI</th><th>Question à poser</th><th>Décision</th></tr></thead><tbody><tr><td>Budget dépensé</td><td>Où part mon budget ?</td><td>Réallouer</td></tr><tr><td>ROAS</td><td>Quelles campagnes créent de la valeur ?</td><td>Garder ou scaler</td></tr><tr><td>CPA</td><td>Quel coût d’acquisition est acceptable ?</td><td>Couper ou tester</td></tr><tr><td>Créa</td><td>Quelle publicité fatigue ?</td><td>Rafraîchir</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-045" class="slide diagnostic">
+      <div class="section-number">045</div>
+      <div class="content">
+        <p class="kicker">Étape 45</p>
+        <h2>Budget et campagnes</h2>
+        <p class="lead">Une bonne question à Claude : où part mon budget et quelle campagne mérite d’être gardée ?</p>
+        <blockquote>Je veux que la personne puisse utiliser la ressource sans avoir besoin de moi pour comprendre la première étape.</blockquote>
+      </div>
+    </section>
+    
+    <section id="section-046" class="slide prompt">
+      <div class="section-number">046</div>
+      <div class="content">
+        <p class="kicker">Étape 46</p>
+        <h2>Analyser les créas</h2>
+        <p class="lead">Je veux savoir quelles publicités tiennent dans le temps et lesquelles fatiguent.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-047" class="slide quote">
+      <div class="section-number">047</div>
+      <div class="content">
+        <p class="kicker">Étape 47</p>
+        <h2>Décider quoi tester</h2>
+        <p class="lead">Le dossier doit sortir un plan d’action, pas seulement un diagnostic.</p>
+        <ol class="steps"><li>Je formule l’idée.</li><li>Je teste que ça fonctionne.</li><li>Je crée le dossier.</li><li>Je prépare le post.</li><li>Je publie et j’envoie.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-048" class="slide checklist">
+      <div class="section-number">048</div>
+      <div class="content">
+        <p class="kicker">Étape 48</p>
+        <h2>Matrice garder scaler tester</h2>
+        <p class="lead">Chaque campagne peut être classée : je garde, je scale, je teste, ou je coupe.</p>
+        <div class="table-wrap"><table><thead><tr><th>Décision</th><th>Quand l’utiliser</th><th>Action</th></tr></thead><tbody><tr><td>Garder</td><td>Résultat stable</td><td>Ne pas toucher trop vite</td></tr><tr><td>Scaler</td><td>Bon résultat + budget disponible</td><td>Augmenter progressivement</td></tr><tr><td>Tester</td><td>Signal intéressant mais fragile</td><td>Lancer variante</td></tr><tr><td>Couper</td><td>Budget perdu sans apprentissage</td><td>Arrêter proprement</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-049" class="slide timeline">
+      <div class="section-number">049</div>
+      <div class="content">
+        <p class="kicker">Étape 49</p>
+        <h2>Garde-fous MCP</h2>
+        <p class="lead">Le connecteur peut lire des données sensibles. Je rappelle les limites et les précautions.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-050" class="slide prompt">
+      <div class="section-number">050</div>
+      <div class="content">
+        <p class="kicker">Étape 50</p>
+        <h2>Créer une bibliothèque de prompts</h2>
+        <p class="lead">Je regroupe les prompts dans le dossier pour que l’élève puisse les réutiliser.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Structurer la ressource dans Notion</span><button class="copy-btn" type="button" data-copy="Crée une page Notion intitulée [NOM_DU_DOSSIER].
+Je veux un dossier complet pour aider quelqu&#x27;un à utiliser [OUTIL/SUJET].
+
+Structure :
+1. Bienvenue
+2. Ce que tu vas apprendre
+3. Prérequis
+4. Étapes de connexion
+5. Prompts exacts
+6. Méthode d&#x27;audit
+7. KPI utiles
+8. Erreurs à éviter
+9. Plan d&#x27;action 7 jours
+
+Ton : simple, direct, pédagogique, pas corporate.">Copier</button></div><pre>Crée une page Notion intitulée [NOM_DU_DOSSIER].
+Je veux un dossier complet pour aider quelqu&#x27;un à utiliser [OUTIL/SUJET].
+
+Structure :
+1. Bienvenue
+2. Ce que tu vas apprendre
+3. Prérequis
+4. Étapes de connexion
+5. Prompts exacts
+6. Méthode d&#x27;audit
+7. KPI utiles
+8. Erreurs à éviter
+9. Plan d&#x27;action 7 jours
+
+Ton : simple, direct, pédagogique, pas corporate.</pre></div>
+      </div>
+    </section>
+    
+    <section id="section-051" class="slide split">
+      <div class="section-number">051</div>
+      <div class="content">
+        <p class="kicker">Étape 51</p>
+        <h2>Créer une ressource partageable</h2>
+        <p class="lead">Le dossier doit être assez clair pour être envoyé sans explication orale.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-052" class="slide prompt">
+      <div class="section-number">052</div>
+      <div class="content">
+        <p class="kicker">Étape 52</p>
+        <h2>Préparer le post LinkedIn</h2>
+        <p class="lead">Une fois le livrable prêt, je construis le post autour de lui, pas l’inverse.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Transformer la ressource en post LinkedIn</span><button class="copy-btn" type="button" data-copy="Aide-moi à transformer cette ressource en post LinkedIn.
+Je veux un post naturel, utile, direct.
+
+Sujet : [SUJET]
+Ressource offerte : [RESSOURCE]
+Cible : [TA_CIBLE]
+Call to action : commente [MOT]
+
+Contraintes :
+- hook fort dès la première ligne
+- phrases courtes
+- pas trop d&#x27;emoji
+- ton humain
+- pas de blabla
+- explique ce que la ressource contient">Copier</button></div><pre>Aide-moi à transformer cette ressource en post LinkedIn.
+Je veux un post naturel, utile, direct.
+
+Sujet : [SUJET]
+Ressource offerte : [RESSOURCE]
+Cible : [TA_CIBLE]
+Call to action : commente [MOT]
+
+Contraintes :
+- hook fort dès la première ligne
+- phrases courtes
+- pas trop d&#x27;emoji
+- ton humain
+- pas de blabla
+- explique ce que la ressource contient</pre></div>
+      </div>
+    </section>
+    
+    <section id="section-053" class="slide full-image">
+      <div class="section-number">053</div>
+      <div class="content">
+        <p class="kicker">Étape 53</p>
+        <h2>Le CTA commentaire</h2>
+        <p class="lead">Je choisis un mot simple, facile à retenir, lié au sujet : ADS, DATA, SEO, GEO.</p>
+        <div class="cards-grid"><div><h3>Idée</h3><p>Une promesse courte.</p></div><div><h3>Livrable</h3><p>Un dossier ou une page utile.</p></div><div><h3>Preuve</h3><p>Une capture ou un exemple réel.</p></div><div><h3>Action</h3><p>Un mot à commenter.</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-054" class="slide full-image">
+      <div class="section-number">054</div>
+      <div class="content">
+        <p class="kicker">Étape 54</p>
+        <h2>Programmer le post</h2>
+        <p class="lead">Je peux programmer le post pour publier au bon moment, puis être disponible pour répondre.</p>
+        <figure class="media"><img src="img/session-13/frame-034.jpg" alt="Programmer le post" loading="lazy"><figcaption>Programmer le post</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-055" class="slide diagnostic">
+      <div class="section-number">055</div>
+      <div class="content">
+        <p class="kicker">Étape 55</p>
+        <h2>Ce que je mets dans le post</h2>
+        <p class="lead">Je mets le problème, ce que contient le dossier, puis la consigne pour recevoir la ressource.</p>
+        <blockquote>Je veux que la personne puisse utiliser la ressource sans avoir besoin de moi pour comprendre la première étape.</blockquote>
+      </div>
+    </section>
+    
+    <section id="section-056" class="slide prompt">
+      <div class="section-number">056</div>
+      <div class="content">
+        <p class="kicker">Étape 56</p>
+        <h2>Ne pas tout mettre dans LinkedIn</h2>
+        <p class="lead">Le post doit donner envie. Le dossier donne la méthode complète.</p>
+        <div class="before-after"><div><span>Avant</span><p>Je publie une idée ou une opinion.</p></div><div><span>Après</span><p>Je publie une ressource que la personne veut recevoir.</p></div></div><figure class="media"><img src="img/session-13/frame-021.jpg" alt="Ne pas tout mettre dans LinkedIn" loading="lazy"><figcaption>Ne pas tout mettre dans LinkedIn</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-057" class="slide prompt">
+      <div class="section-number">057</div>
+      <div class="content">
+        <p class="kicker">Étape 57</p>
+        <h2>Répondre aux commentaires</h2>
+        <p class="lead">Je réponds simplement, puis j’envoie la ressource. Pas besoin d’un message compliqué.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Répondre en message privé</span><button class="copy-btn" type="button" data-copy="Réponds à cette personne qui a commenté [MOT].
+Objectif : envoyer la ressource, créer une vraie conversation, ne pas vendre brutalement.
+Message court, naturel, sympathique.
+
+Contexte : [CONTEXTE].">Copier</button></div><pre>Réponds à cette personne qui a commenté [MOT].
+Objectif : envoyer la ressource, créer une vraie conversation, ne pas vendre brutalement.
+Message court, naturel, sympathique.
+
+Contexte : [CONTEXTE].</pre></div>
+      </div>
+    </section>
+    
+    <section id="section-058" class="slide checklist">
+      <div class="section-number">058</div>
+      <div class="content">
+        <p class="kicker">Étape 58</p>
+        <h2>Message privé court</h2>
+        <p class="lead">Le message privé doit donner le lien et ouvrir une discussion sans pression.</p>
+        <figure class="media"><img src="img/session-13/frame-003.jpg" alt="Message privé court" loading="lazy"><figcaption>Message privé court</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-059" class="slide timeline">
+      <div class="section-number">059</div>
+      <div class="content">
+        <p class="kicker">Étape 59</p>
+        <h2>Créer la connexion</h2>
+        <p class="lead">Ajouter la personne sur LinkedIn augmente la relation et permet une suite plus naturelle.</p>
+        <ol class="steps"><li>Je formule l’idée.</li><li>Je teste que ça fonctionne.</li><li>Je crée le dossier.</li><li>Je prépare le post.</li><li>Je publie et j’envoie.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-060" class="slide split reverse">
+      <div class="section-number">060</div>
+      <div class="content">
+        <p class="kicker">Étape 60</p>
+        <h2>Mesurer le post</h2>
+        <p class="lead">Je regarde impressions, commentaires, republications et clics. Ça me dit quoi améliorer.</p>
+        <div class="stats"><div><strong>visible</strong><span>preuve</span></div><div><strong>commentaire</strong><span>action</span></div><div><strong>DM</strong><span>suite</span></div></div><figure class="media"><img src="img/session-13/frame-005.jpg" alt="Mesurer le post" loading="lazy"><figcaption>Mesurer le post</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-061" class="slide split">
+      <div class="section-number">061</div>
+      <div class="content">
+        <p class="kicker">Étape 61</p>
+        <h2>Comprendre pourquoi ça marche</h2>
+        <p class="lead">Les gens commentent parce qu’ils veulent gagner du temps, pas parce qu’ils adorent les posts longs.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-062" class="slide cards">
+      <div class="section-number">062</div>
+      <div class="content">
+        <p class="kicker">Étape 62</p>
+        <h2>Ne pas automatiser trop tôt</h2>
+        <p class="lead">Au début je gère à la main. J’automatise seulement quand le processus est clair.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-063" class="slide full-image">
+      <div class="section-number">063</div>
+      <div class="content">
+        <p class="kicker">Étape 63</p>
+        <h2>Construire 10 idées avant de publier</h2>
+        <p class="lead">Je prépare un stock de sujets pour ne pas dépendre de l’inspiration du jour.</p>
+        <ol class="steps"><li>Je formule l’idée.</li><li>Je teste que ça fonctionne.</li><li>Je crée le dossier.</li><li>Je prépare le post.</li><li>Je publie et j’envoie.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-064" class="slide table">
+      <div class="section-number">064</div>
+      <div class="content">
+        <p class="kicker">Étape 64</p>
+        <h2>Publier tous les 4 jours</h2>
+        <p class="lead">Je laisse le temps au post de vivre, puis je publie une nouvelle ressource.</p>
+        <div class="timeline"><div><b>1</b><span>Veille</span></div><div><b>2</b><span>Test</span></div><div><b>3</b><span>Livrable</span></div><div><b>4</b><span>Post</span></div><div><b>5</b><span>DM</span></div></div>
+      </div>
+    </section>
+    
+    <section id="section-065" class="slide diagnostic">
+      <div class="section-number">065</div>
+      <div class="content">
+        <p class="kicker">Étape 65</p>
+        <h2>Suivre les abonnements</h2>
+        <p class="lead">Pour chauffer le compte, je peux ajouter chaque jour des personnes pertinentes sans spammer.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-066" class="slide prompt">
+      <div class="section-number">066</div>
+      <div class="content">
+        <p class="kicker">Étape 66</p>
+        <h2>Faire une preuve avant de promettre</h2>
+        <p class="lead">Je teste le workflow ou je produis le dossier avant de publier. La preuve rend le post crédible.</p>
+        <div class="stats"><div><strong>visible</strong><span>preuve</span></div><div><strong>commentaire</strong><span>action</span></div><div><strong>DM</strong><span>suite</span></div></div><figure class="media"><img src="img/session-13/frame-037.jpg" alt="Faire une preuve avant de promettre" loading="lazy"><figcaption>Faire une preuve avant de promettre</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-067" class="slide quote">
+      <div class="section-number">067</div>
+      <div class="content">
+        <p class="kicker">Étape 67</p>
+        <h2>Nettoyer le livrable</h2>
+        <p class="lead">Je corrige les titres, les liens, les prompts, les pages vides et les formulations floues.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-068" class="slide prompt">
+      <div class="section-number">068</div>
+      <div class="content">
+        <p class="kicker">Étape 68</p>
+        <h2>Lien vers mon site</h2>
+        <p class="lead">Quand c’est possible, je renvoie vers une page de mon site pour capter du trafic utile.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Adapter le positionnement à une page web</span><button class="copy-btn" type="button" data-copy="en regardant le texte ici remplace le pour mon agence restIA ( utilises les bons mots clés que tu as trouver sur l&#x27;audit seo ) sois simple naturel n&#x27;en rajoute pas et utilises meme longueur de mots stp pour casser la structure de mon site">Copier</button></div><pre>en regardant le texte ici remplace le pour mon agence restIA ( utilises les bons mots clés que tu as trouver sur l&#x27;audit seo ) sois simple naturel n&#x27;en rajoute pas et utilises meme longueur de mots stp pour casser la structure de mon site</pre></div><figure class="media"><img src="img/session-13/frame-019.jpg" alt="Lien vers mon site" loading="lazy"><figcaption>Lien vers mon site</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-069" class="slide timeline">
+      <div class="section-number">069</div>
+      <div class="content">
+        <p class="kicker">Étape 69</p>
+        <h2>Lien vers Notion</h2>
+        <p class="lead">Quand je veux livrer vite, Notion suffit. Plus tard, je peux convertir en page web ou PDF.</p>
+        <div class="before-after"><div><span>Avant</span><p>Je publie une idée ou une opinion.</p></div><div><span>Après</span><p>Je publie une ressource que la personne veut recevoir.</p></div></div><figure class="media"><img src="img/session-13/frame-036.jpg" alt="Lien vers Notion" loading="lazy"><figcaption>Lien vers Notion</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-070" class="slide split reverse">
+      <div class="section-number">070</div>
+      <div class="content">
+        <p class="kicker">Étape 70</p>
+        <h2>La page de réception</h2>
+        <p class="lead">Le lien doit s’ouvrir sans friction. Si la personne doit chercher, l’expérience baisse.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-071" class="slide prompt">
+      <div class="section-number">071</div>
+      <div class="content">
+        <p class="kicker">Étape 71</p>
+        <h2>Créer une page ressource</h2>
+        <p class="lead">Je peux transformer le dossier en article ou en landing page pour le rendre plus professionnel.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Demander la section suivante</span><button class="copy-btn" type="button" data-copy="voici la prochaine section">Copier</button></div><pre>voici la prochaine section</pre></div><ol class="steps"><li>Je transforme le dossier en page.</li><li>Je garde une seule idée par section.</li><li>Je demande la section suivante.</li><li>Je vérifie le rendu.</li><li>Je publie uniquement quand le parcours est clair.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-072" class="slide cards">
+      <div class="section-number">072</div>
+      <div class="content">
+        <p class="kicker">Étape 72</p>
+        <h2>Ce que je fais si la ressource est trop longue</h2>
+        <p class="lead">Je garde un sommaire clair, puis je mets les détails dans des sous-pages.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-073" class="slide full-image">
+      <div class="section-number">073</div>
+      <div class="content">
+        <p class="kicker">Étape 73</p>
+        <h2>Ce que je fais si le sujet est trop technique</h2>
+        <p class="lead">Je traduis en bénéfice simple : gagner du temps, mieux décider, trouver des leads.</p>
+        <div class="before-after"><div><span>Avant</span><p>Je publie une idée ou une opinion.</p></div><div><span>Après</span><p>Je publie une ressource que la personne veut recevoir.</p></div></div><figure class="media"><img src="img/session-13/frame-030.jpg" alt="Ce que je fais si le sujet est trop technique" loading="lazy"><figcaption>Ce que je fais si le sujet est trop technique</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-074" class="slide table">
+      <div class="section-number">074</div>
+      <div class="content">
+        <p class="kicker">Étape 74</p>
+        <h2>Ce que je fais si l’outil change</h2>
+        <p class="lead">Je garde le dossier vivant : je mets à jour les captures, les prompts et les limites.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-075" class="slide diagnostic">
+      <div class="section-number">075</div>
+      <div class="content">
+        <p class="kicker">Étape 75</p>
+        <h2>La ressource doit être testable</h2>
+        <p class="lead">L’élève doit pouvoir refaire une étape et voir si c’est réussi.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-076" class="slide prompt">
+      <div class="section-number">076</div>
+      <div class="content">
+        <p class="kicker">Étape 76</p>
+        <h2>Le bon niveau de détail</h2>
+        <p class="lead">Je donne assez d’explications pour refaire, mais je ne noie pas la personne dans des options.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-077" class="slide quote">
+      <div class="section-number">077</div>
+      <div class="content">
+        <p class="kicker">Étape 77</p>
+        <h2>Construire la preuve dans le dossier</h2>
+        <p class="lead">J’ajoute une capture, un exemple, une matrice ou un résultat. La preuve rassure.</p>
+        <div class="stats"><div><strong>visible</strong><span>preuve</span></div><div><strong>commentaire</strong><span>action</span></div><div><strong>DM</strong><span>suite</span></div></div><figure class="media"><img src="img/session-13/frame-035.jpg" alt="Construire la preuve dans le dossier" loading="lazy"><figcaption>Construire la preuve dans le dossier</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-078" class="slide checklist">
+      <div class="section-number">078</div>
+      <div class="content">
+        <p class="kicker">Étape 78</p>
+        <h2>Garder une seule promesse</h2>
+        <p class="lead">Un lead magnet fort n’essaie pas de tout résoudre. Il résout un problème précis.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-079" class="slide timeline">
+      <div class="section-number">079</div>
+      <div class="content">
+        <p class="kicker">Étape 79</p>
+        <h2>Ne pas écrire un post trop corporate</h2>
+        <p class="lead">Je garde les phrases courtes et humaines. LinkedIn récompense la clarté.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-080" class="slide split reverse">
+      <div class="section-number">080</div>
+      <div class="content">
+        <p class="kicker">Étape 80</p>
+        <h2>Ce que je surveille après publication</h2>
+        <p class="lead">Les commentaires, les profils qui réagissent, les messages reçus et les prises de rendez-vous.</p>
+        <div class="table-wrap"><table><thead><tr><th>Signal</th><th>Ce que ça dit</th><th>Action</th></tr></thead><tbody><tr><td>Commentaires</td><td>La ressource attire</td><td>Répondre vite</td></tr><tr><td>Impressions</td><td>Le hook circule</td><td>Observer</td></tr><tr><td>DM</td><td>L’intérêt est réel</td><td>Envoyer proprement</td></tr><tr><td>Calls</td><td>La conversion commence</td><td>Qualifier</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-081" class="slide prompt">
+      <div class="section-number">081</div>
+      <div class="content">
+        <p class="kicker">Étape 81</p>
+        <h2>Relancer proprement</h2>
+        <p class="lead">Si la personne commente mais ne répond pas, je peux relancer avec une phrase courte et utile.</p>
+        <div class="prompt-block"><div class="prompt-head"><span>Répondre en message privé</span><button class="copy-btn" type="button" data-copy="Réponds à cette personne qui a commenté [MOT].
+Objectif : envoyer la ressource, créer une vraie conversation, ne pas vendre brutalement.
+Message court, naturel, sympathique.
+
+Contexte : [CONTEXTE].">Copier</button></div><pre>Réponds à cette personne qui a commenté [MOT].
+Objectif : envoyer la ressource, créer une vraie conversation, ne pas vendre brutalement.
+Message court, naturel, sympathique.
+
+Contexte : [CONTEXTE].</pre></div>
+      </div>
+    </section>
+    
+    <section id="section-082" class="slide cards">
+      <div class="section-number">082</div>
+      <div class="content">
+        <p class="kicker">Étape 82</p>
+        <h2>Transformer les commentaires en idées</h2>
+        <p class="lead">Les questions reçues deviennent de nouvelles sections, de nouveaux posts et de nouveaux prompts.</p>
+        <div class="timeline"><div><b>1</b><span>Veille</span></div><div><b>2</b><span>Test</span></div><div><b>3</b><span>Livrable</span></div><div><b>4</b><span>Post</span></div><div><b>5</b><span>DM</span></div></div>
+      </div>
+    </section>
+    
+    <section id="section-083" class="slide full-image">
+      <div class="section-number">083</div>
+      <div class="content">
+        <p class="kicker">Étape 83</p>
+        <h2>Créer une banque de hooks</h2>
+        <p class="lead">Je conserve les hooks qui marchent pour les adapter à d’autres sujets.</p>
+        <div class="table-wrap"><table><thead><tr><th>Type de hook</th><th>Exemple</th><th>Quand l’utiliser</th></tr></thead><tbody><tr><td>Nouveauté</td><td>Meta Ads vient de donner les clés à Claude</td><td>Quand un outil sort</td></tr><tr><td>Gain</td><td>10 000 leads gratuits</td><td>Quand le bénéfice est direct</td></tr><tr><td>Ressource</td><td>Je viens de créer l’assistant</td><td>Quand le livrable est prêt</td></tr><tr><td>Contraste</td><td>Avant il fallait 4 outils</td><td>Quand le changement est fort</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-084" class="slide table">
+      <div class="section-number">084</div>
+      <div class="content">
+        <p class="kicker">Étape 84</p>
+        <h2>Créer une banque de sujets</h2>
+        <p class="lead">Chaque outil ou nouvelle API peut devenir un dossier si je trouve une application simple.</p>
+        <div class="cards-grid"><div><h3>Idée</h3><p>Une promesse courte.</p></div><div><h3>Livrable</h3><p>Un dossier ou une page utile.</p></div><div><h3>Preuve</h3><p>Une capture ou un exemple réel.</p></div><div><h3>Action</h3><p>Un mot à commenter.</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-085" class="slide diagnostic">
+      <div class="section-number">085</div>
+      <div class="content">
+        <p class="kicker">Étape 85</p>
+        <h2>La boucle complète</h2>
+        <p class="lead">Veille, test, livrable, post, commentaire, DM, rendez-vous, amélioration.</p>
+        <div class="timeline"><div><b>1</b><span>Veille</span></div><div><b>2</b><span>Test</span></div><div><b>3</b><span>Livrable</span></div><div><b>4</b><span>Post</span></div><div><b>5</b><span>DM</span></div></div>
+      </div>
+    </section>
+    
+    <section id="section-086" class="slide prompt">
+      <div class="section-number">086</div>
+      <div class="content">
+        <p class="kicker">Étape 86</p>
+        <h2>Erreurs fréquentes</h2>
+        <p class="lead">La plupart des échecs viennent d’une promesse trop floue, d’un livrable faible ou d’un CTA absent.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-087" class="slide quote">
+      <div class="section-number">087</div>
+      <div class="content">
+        <p class="kicker">Étape 87</p>
+        <h2>Erreur : trop de jargon</h2>
+        <p class="lead">Si la personne ne comprend pas le titre, elle ne commentera pas.</p>
+        <div class="before-after"><div><span>Avant</span><p>Je publie une idée ou une opinion.</p></div><div><span>Après</span><p>Je publie une ressource que la personne veut recevoir.</p></div></div><figure class="media"><img src="img/session-13/frame-011.jpg" alt="Erreur : trop de jargon" loading="lazy"><figcaption>Erreur : trop de jargon</figcaption></figure>
+      </div>
+    </section>
+    
+    <section id="section-088" class="slide checklist">
+      <div class="section-number">088</div>
+      <div class="content">
+        <p class="kicker">Étape 88</p>
+        <h2>Erreur : pas de preuve</h2>
+        <p class="lead">Un post sans capture, sans exemple ou sans résultat paraît théorique.</p>
+        <div class="table-wrap"><table><thead><tr><th>Question</th><th>Réponse attendue</th></tr></thead><tbody><tr><td>La promesse est claire ?</td><td>Oui, en une ligne</td></tr><tr><td>Le livrable est prêt ?</td><td>Oui, avant publication</td></tr><tr><td>Le CTA est simple ?</td><td>Oui, un mot</td></tr><tr><td>La suite est prévue ?</td><td>Oui, DM + lien</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-089" class="slide timeline">
+      <div class="section-number">089</div>
+      <div class="content">
+        <p class="kicker">Étape 89</p>
+        <h2>Erreur : ressource commerciale</h2>
+        <p class="lead">Si le dossier n’est qu’un prétexte pour vendre, la personne le sent immédiatement.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-090" class="slide split reverse">
+      <div class="section-number">090</div>
+      <div class="content">
+        <p class="kicker">Étape 90</p>
+        <h2>Erreur : CTA compliqué</h2>
+        <p class="lead">Un seul mot à commenter suffit. Je ne demande pas trois actions au départ.</p>
+        <ul class="checklist"><li>Hook compréhensible</li><li>Ressource utilisable</li><li>Lien testé</li><li>Prompt copiable</li><li>CTA clair</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-091" class="slide split">
+      <div class="section-number">091</div>
+      <div class="content">
+        <p class="kicker">Étape 91</p>
+        <h2>Erreur : ne pas répondre</h2>
+        <p class="lead">Si je demande de commenter, je dois être prêt à gérer les réponses.</p>
+        <div class="callout warn"><strong>Piège à éviter</strong><p>Si je promets trop, si je parle trop technique ou si je livre une ressource faible, la confiance disparaît.</p></div>
+      </div>
+    </section>
+    
+    <section id="section-092" class="slide cards">
+      <div class="section-number">092</div>
+      <div class="content">
+        <p class="kicker">Étape 92</p>
+        <h2>Exercice élève</h2>
+        <p class="lead">Tu vas choisir un sujet, écrire le hook, créer le dossier, puis préparer le post.</p>
+        <ol class="steps"><li>Je formule l’idée.</li><li>Je teste que ça fonctionne.</li><li>Je crée le dossier.</li><li>Je prépare le post.</li><li>Je publie et j’envoie.</li></ol>
+      </div>
+    </section>
+    
+    <section id="section-093" class="slide full-image">
+      <div class="section-number">093</div>
+      <div class="content">
+        <p class="kicker">Étape 93</p>
+        <h2>Checklist avant publication</h2>
+        <p class="lead">Avant de publier, je vérifie le hook, le livrable, le lien, le CTA et le message privé.</p>
+        <ul class="checklist"><li>Le hook tient seul.</li><li>Le dossier est terminé.</li><li>Le lien fonctionne.</li><li>Le mot à commenter est clair.</li><li>Le message privé est prêt.</li><li>Je peux répondre aux premiers commentaires.</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-094" class="slide table">
+      <div class="section-number">094</div>
+      <div class="content">
+        <p class="kicker">Étape 94</p>
+        <h2>Checklist du dossier</h2>
+        <p class="lead">Le dossier doit contenir les prompts, les étapes, les erreurs et le plan d’action.</p>
+        <ul class="checklist"><li>Sommaire</li><li>Prompts</li><li>Étapes</li><li>Captures</li><li>Checklist</li><li>Matrice</li><li>Plan 7 jours</li><li>Liens utiles</li></ul>
+      </div>
+    </section>
+    
+    <section id="section-095" class="slide diagnostic">
+      <div class="section-number">095</div>
+      <div class="content">
+        <p class="kicker">Étape 95</p>
+        <h2>Score rapide du lead magnet</h2>
+        <p class="lead">Je note le sujet sur simplicité, utilité, nouveauté, preuve et facilité d’envoi.</p>
+        <div class="table-wrap"><table><thead><tr><th>Critère</th><th>Note /10</th><th>Question</th></tr></thead><tbody><tr><td>Simplicité</td><td>?</td><td>Un dirigeant comprend-il en 5 secondes ?</td></tr><tr><td>Utilité</td><td>?</td><td>Est-ce que ça fait gagner du temps ?</td></tr><tr><td>Nouveauté</td><td>?</td><td>Est-ce que le sujet intrigue ?</td></tr><tr><td>Preuve</td><td>?</td><td>Ai-je un exemple réel ?</td></tr><tr><td>Envoi</td><td>?</td><td>Puis-je le donner vite ?</td></tr></tbody></table></div>
+      </div>
+    </section>
+    
+    <section id="section-096" class="slide prompt">
+      <div class="section-number">096</div>
+      <div class="content">
+        <p class="kicker">Étape 96</p>
+        <h2>Plan de production sur 2 jours</h2>
+        <p class="lead">Jour 1 : veille, sujet, test. Jour 2 : dossier, post, visuel, publication.</p>
+        <div class="timeline"><div><b>1</b><span>Veille</span></div><div><b>2</b><span>Test</span></div><div><b>3</b><span>Livrable</span></div><div><b>4</b><span>Post</span></div><div><b>5</b><span>DM</span></div></div>
+      </div>
+    </section>
+    
+    <section id="section-097" class="slide quote">
+      <div class="section-number">097</div>
+      <div class="content">
+        <p class="kicker">Étape 97</p>
+        <h2>Plan d’action 7 jours</h2>
+        <p class="lead">Je transforme le lead magnet en routine hebdomadaire pour construire mon audience.</p>
+        <div class="day-grid"><div><b>Jour 1</b><p>Choisir le sujet</p></div><div><b>Jour 2</b><p>Tester le workflow</p></div><div><b>Jour 3</b><p>Créer le dossier</p></div><div><b>Jour 4</b><p>Préparer le post</p></div><div><b>Jour 5</b><p>Publier</p></div><div><b>Jour 6</b><p>Répondre aux commentaires</p></div><div><b>Jour 7</b><p>Améliorer le système</p></div></div>
+      </div>
+    </section>
+    
+    <section id="section-098" class="slide checklist">
+      <div class="section-number">098</div>
+      <div class="content">
+        <p class="kicker">Étape 98</p>
+        <h2>Ce que tu dois retenir</h2>
+        <p class="lead">Un lead magnet est un système, pas un document isolé.</p>
+        <blockquote>Je veux que la personne puisse utiliser la ressource sans avoir besoin de moi pour comprendre la première étape.</blockquote>
+      </div>
+    </section>
+    
+    <section id="section-099" class="slide full-image">
+      <div class="section-number">099</div>
+      <div class="content">
+        <p class="kicker">Étape 99</p>
+        <h2>Liens finaux</h2>
+        <p class="lead">Les quatre posts LinkedIn restent accessibles pour comparer les exemples réels.</p>
+        <div class="link-grid"><a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_urgent-meta-a-officiellement-connect%C3%A9-share-7456989996227387392-f8si/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Meta Ads + Claude</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_la-france-est-en-avance-sur-le-monde-l-share-7433879917525733376-l4xJ/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Data.gouv</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_un-assistant-seo-gratuit-pour-toutes-les-share-7422280891227348992-WGK4/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Assistant SEO</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_derni%C3%A8re-heure-claude-vient-de-sortir-des-share-7414731714822049792-xU31/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Claude Skills GEO</span><strong>Ouvrir le post LinkedIn</strong></a></div>
+      </div>
+    </section>
+    
+    <section id="section-100" class="slide full-image">
+      <div class="section-number">100</div>
+      <div class="content">
+        <p class="kicker">Étape 100</p>
+        <h2>Récap final</h2>
+        <p class="lead">Tu as maintenant la méthode pour trouver une idée, créer le livrable, publier, envoyer et convertir.</p>
+        <div class="link-grid"><a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_urgent-meta-a-officiellement-connect%C3%A9-share-7456989996227387392-f8si/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Meta Ads + Claude</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_la-france-est-en-avance-sur-le-monde-l-share-7433879917525733376-l4xJ/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Data.gouv</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_un-assistant-seo-gratuit-pour-toutes-les-share-7422280891227348992-WGK4/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Assistant SEO</span><strong>Ouvrir le post LinkedIn</strong></a>
+<a class="link-card" href="https://www.linkedin.com/posts/baptiste-fort-46873524b_derni%C3%A8re-heure-claude-vient-de-sortir-des-share-7414731714822049792-xU31/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAD3d21ABJ2VAmIaYMI8uyfR1y9-9J1P7Odk" target="_blank" rel="noopener"><span>Claude Skills GEO</span><strong>Ouvrir le post LinkedIn</strong></a></div><div class="prompt-block"><div class="prompt-head"><span>Dernier prompt avant publication</span><button class="copy-btn" type="button" data-copy="Prépare une version finale de mon post LinkedIn.
+
+Contraintes :
+- hook fort
+- une seule idée
+- ressource claire
+- CTA simple
+- pas trop d&#x27;emoji
+- phrases courtes
+- ton direct">Copier</button></div><pre>Prépare une version finale de mon post LinkedIn.
+
+Contraintes :
+- hook fort
+- une seule idée
+- ressource claire
+- CTA simple
+- pas trop d&#x27;emoji
+- phrases courtes
+- ton direct</pre></div><figure class="media"><img src="img/session-13/frame-069.jpg" alt="Récap final" loading="lazy"><figcaption>Récap final</figcaption></figure>
+      </div>
+    </section>
+    
+  </main>
+  <footer class="footer">
+    Support autonome généré pour la séance 13. Les images utilisées viennent uniquement des captures locales de la séance.
+  </footer>
+  <script>
+    const progress = document.getElementById('progress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = max > 0 ? `${(window.scrollY / max) * 100}%` : '0%';
+    };
+    updateProgress();
+    addEventListener('scroll', updateProgress, { passive: true });
+    document.querySelectorAll('.copy-btn').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const text = button.dataset.copy || '';
+        try {
+          await navigator.clipboard.writeText(text);
+          button.textContent = 'Copié';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.textContent = 'Copier';
+            button.classList.remove('copied');
+          }, 1400);
+        } catch (error) {
+          button.textContent = 'À copier';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
